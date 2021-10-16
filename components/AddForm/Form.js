@@ -61,6 +61,10 @@ const Form = ({setStatus,setShow}) => {
             setError((pre)=>{
                 return {...pre,price:'This field must be required'}
             })
+        }else if(parseInt(values.price) <= 0){
+            setError((pre)=>{
+                return {...pre,price:'Price is bigger than 0'}
+            })
         }
         if(!values.name){
             setError((pre)=>{
